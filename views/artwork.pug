@@ -1,0 +1,48 @@
+html
+	head
+		title #{name}
+		style.
+			body{
+				background-color:rgba(65, 65, 224, 0.164);
+			}
+		
+
+	body(onload = "init()")
+
+		h1= "Name: " + name
+		br
+		include header
+		include buttons
+		br
+
+		- let url = artist
+		a(href = '/artist/' + url) Artist: #{artist}
+
+		p= "Year: " + year
+
+		- let url1 = category
+		a(href = '/category/' + url1) Category: #{category}
+		br
+
+		- let url2 = medium
+		a(href = '/medium/' + url2) Medium: #{medium}
+		br
+
+		p= "Description: " + description
+		
+		img(src= image alt=name)
+		div#likeButtons
+		div#likeNum
+		br
+		input(type = "text" id = "review")
+		button(type='button' id = "addReview" onclick="addReview()") Add a Review
+		div#addReviewSpot
+			each review in reviews 
+				p #{review}
+		br
+		br
+		br
+		input(type = "text" id = "passerID" value = _id style='width:0px; height:0px;')
+
+		script 
+			include ../public/artworkclient.js

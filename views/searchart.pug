@@ -1,0 +1,28 @@
+html
+	head
+		title Artwork Searcher
+		link(rel="stylesheet" href="styles.css")
+	
+	body(onload = "init()")
+		h1 Artwork Database
+		
+		br
+		include header
+		include buttons
+		br
+
+		p Enter data into the filter form below and hit refresh to find matching artworks
+
+		p Artist:
+			input#artist(type="textbox" value = "")
+		p Name:
+			input#name(type="textbox" value = "")
+		p Category keyword:
+			input#keyword(type="textbox" value = "")
+		
+		button#refresh(type="button") Refresh Results
+
+		div#results
+
+		script 
+			include ../public/searchartclient.js

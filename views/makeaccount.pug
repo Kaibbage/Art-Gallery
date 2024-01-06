@@ -1,0 +1,22 @@
+html
+    head
+        title Make an Account
+        link(rel="stylesheet" href="styles.css")
+        
+    body(onload = "init()")
+        h1 Make your account below
+        label(for "UserName") Username:
+        input(type="text" name="UserName" id = "UserName" placeholder="")
+        br
+        label(for "PassWord") Password:
+        input(type="text" name="PassWord" id = "PassWord" placeholder="")
+        br
+        button(type='button' id = "submitButton") Submit
+        br
+        br
+        br
+        include header
+        include buttons
+
+        script 
+            include ../public/makeaccountclient.js

@@ -1,0 +1,32 @@
+html
+    head
+        title Add ArtWork
+        link(rel="stylesheet" href="styles.css")
+    
+    body(onload = "init()")
+        h1 Add Art Work
+        
+        br
+        include header
+        include buttons
+        br
+        
+        p Enter data into the fields below and hit submit to add your artwork
+        
+        p Name:
+            input#name(type="textbox" value = "")
+        p Year:
+            input#year(type="textbox" value = "")
+        p Category:
+            input#category(type="textbox" value = "")
+        p Medium:
+            input#medium(type="textbox" value = "")
+        p Description:
+            input#description(type="textbox" value = "")
+        p Image Link:
+            input#image(type="textbox" value = "")
+        
+        button#submitButton(type="button") Submit
+        
+        script 
+            include ../public/addartworkclient.js

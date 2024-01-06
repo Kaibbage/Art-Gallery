@@ -1,0 +1,21 @@
+html
+    head
+        title Art Works
+        style.
+            body{
+                background-color:rgba(65, 65, 224, 0.164);
+            }
+        
+    body
+        h1 Matching Artworks
+        
+        br
+        include header
+        include buttons
+        br
+        
+        each artwork in artWorks
+            - let url = artwork._id
+            a(href ='/artWork/' + url) #{artwork.name}
+            br
+            br

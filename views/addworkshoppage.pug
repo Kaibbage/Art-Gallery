@@ -1,0 +1,23 @@
+html
+    head
+        title Add Workshop
+        link(rel="stylesheet" href="styles.css")
+    
+    body(onload = "init()")
+        h1 Add Workshop
+        
+        br
+        include header
+        include buttons
+        br
+        
+        p Enter data into the fields below and hit submit to add your workshop
+        
+        p Name:
+            input#name(type="textbox" value = "")
+
+        
+        button#submitButton(type="button") Submit
+        
+        script 
+            include ../public/addworkshopclient.js

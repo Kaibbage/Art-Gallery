@@ -1,0 +1,22 @@
+html
+    head
+        title Art Works
+        style.
+            body{
+                background-color:rgba(65, 65, 224, 0.164);
+            }
+        
+    body
+        h1 Matching Artworks
+
+        -let counter = 0
+        
+        each artwork in artWorks
+            - let url = artwork._id
+            a(href ='/artWork/' + url) #{artwork.name}
+            img(src= artwork.image alt=artwork.name style='width:100px; height:100px; margin-right: 7%; margin-top: 50px;')
+            - counter++
+            if(counter > 4)
+                - counter = 0
+                br
+                br

@@ -1,0 +1,35 @@
+html
+    head
+        title #{artist.name}
+        style.
+            body{
+                background-color:rgba(65, 65, 224, 0.164);
+            }
+        
+    body
+        h1 #{artist.name}
+        
+        br
+        include header
+        include buttons
+        br
+
+        p Follow Artist: 
+            button#followButton(type="button" onclick="follow()") Follow
+            button#unfollowButton(type="button" onclick="unfollow()") Unfollow
+
+        h2 Artworks
+        each artwork in artist.artWorks
+            - let url = artwork._id
+            a(href ='/artWork/' + url) #{artwork.name}
+            br
+
+        h2 Workshops
+        each workShop in artist.workShops
+            p #{workShop.name} :
+                button(type='button' id = "register" onclick="register()") register
+
+        input(type = "text" id = "passerName" value = artist.name style='width:0px; height:0px;')
+        
+        script 
+            include ../public/artistclient.js
